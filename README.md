@@ -12,10 +12,14 @@ OBS. Foi feito por mim apenas toda a funcionalidade JavaScript.
 <img src="https://github.com/user-attachments/assets/6890ea65-b8d8-4ca4-9502-28401d7fe89a" alt="javascript-logo" width="50" height="auto"/>
 
 ## Funcionalidades
-- O jogo gera um número aleatório entre 1 e 5000.
+- O jogo gera um número aleatório entre 1 e 100.
 - O jogador deve tentar adivinhar o número.
 - O jogo dá dicas, informando se o número secreto é maior ou menor que o palpite do jogador.
 - O número de tentativas é contabilizado, e ao final, o número de tentativas é informado ao jogador.
+
+## Link do Site
+
+https://jogo-renan-dias-utidas-projects.vercel.app/
 
 ## Como rodar o projeto:
 1. Clone o repositório:
