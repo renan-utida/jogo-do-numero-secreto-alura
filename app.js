@@ -6,7 +6,15 @@ let tentativas = 1;
 function exibirTextoNaTela(tag, texto){
     let campo = document.querySelector(tag);
     campo.innerHTML = texto;
-    responsiveVoice.speak(texto, 'Brazilian Portuguese Female', {rate: 1.2});
+    // responsiveVoice.speak(texto, 'Brazilian Portuguese Female', {rate: 1.2});
+    if ('speechSynthesis' in window) {
+        let utterance = new SpeechSynthesisUtterance(texto);
+        utterance.lang = 'pt-BR'; 
+        utterance.rate = 1.2; 
+        window.speechSynthesis.speak(utterance); 
+    } else {
+        console.log("Web Speech API não suportada neste navegador.");
+    }
 }
 
 function exibirMensagemInicial(){
@@ -27,7 +35,7 @@ function verificarChute(){
         document.getElementById('reiniciar').removeAttribute('disabled');
     } else {
         if (chute > numeroSecreto) {
-            exibirTextoNaTela('p', 'O número é menor do que o chute!');
+            exibirTextoNaTela('p', 'O número secreto é menor do que o chute!');
         } else {
             exibirTextoNaTela('p', 'O número secreto é maior que o chute!');
         }
